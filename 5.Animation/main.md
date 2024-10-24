@@ -90,13 +90,19 @@ class _AnimationPageState extends State<MoveAnimationPage> with SingleTickerProv
 }
 ```
 
+<b>addListener</b>
+监听动画的差值变化，刷新状态机，进而触发build重绘。
+<b>animate</b>
+有一点比较特殊，创建动画对象时，是先创建一个Tween对象，设置了起点终点值。
+对该Tween对象调用了animate方法，传入了一个线性渐变的CurvedAnimation对象。
 
+animate看描述像是一个合并两个Animation到一起的方法，使用当时对象的值，使用入参的动画效果，返回一个新的动画对象：
+![](./images/1.png)
+像是胶水一样把描述起点/终点值的动画对象，和描述变化点动画对象粘在一起。
 
+<b>addStatusListener</b>
+可以拿到动画的状态
 
-
-### 1.2 addListener 
-
-### 1.3 addStatusListener
 
 ### 1.4 AnimationController
 
